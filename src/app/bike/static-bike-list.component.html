@@ -1,0 +1,51 @@
+<p>
+  bike works!
+</p>
+<div class='table-responsive'>
+  <table class='table' *ngIf='bikes.stationBeanList && bikes.stationBeanList.length'>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Station Name</th>
+        <th>Available Docks</th>
+        <th>Total Docks</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Status Value</th>
+        <th>Status Key</th>
+        <th>Available Bikes</th>
+        <th>Street Address 1</th>
+        <th>Street Address 2</th>
+        <th>City</th>
+        <th>Postal Code</th>
+        <th>Location</th>
+        <th>Altitude</th>
+        <th>Test Station</th>
+        <th>Last Communication Time</th>
+        <th>Land Mark</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let bike of bikes.stationBeanList'>
+        <td>{{ bike.id }}</td>
+        <td>{{ bike.stationName }}</td>
+        <td>{{ bike.availableDocks }}</td>
+        <td>{{ bike.totalDocks }}</td>
+        <td>{{ bike.latitude }}</td>
+        <td>{{ bike.longitude }}</td>
+        <td>{{ bike.statusValue }}</td>
+        <td>{{ bike.statusKey }}</td>
+        <td>{{ bike.availableBikes }}</td>
+        <td>{{ bike.stAddress1 }}</td>
+        <td>{{ bike.stAddress2 }}</td>
+        <td>{{ bike.city }}</td>
+        <td>{{ bike.postalCode }}</td>
+        <td>{{ bike.location }}</td>
+        <td>{{ bike.altitude }}</td>
+        <td>{{ bike.testStation }}</td>
+        <td>{{ bike.lastCommunicationTime }}</td>
+        <td>{{ bike.landMark }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

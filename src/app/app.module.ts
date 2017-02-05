@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { BasicService} from './basic.service';
+import { BasicService} from './bike/basic.service';
+import { StaticBikeListComponent } from './bike/static-bike-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StaticBikeListComponent
   ],
   imports: [
     BrowserModule,
@@ -16,6 +18,6 @@ import { BasicService} from './basic.service';
     HttpModule
   ],
   providers: [ BasicService ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

@@ -10,6 +10,7 @@ import { fixedData } from './data';
 export class BasicService {
 
   constructor() { }
+
   getData(): Observable<BikeInfo> {
     return Observable.create((observer: Observer<BikeInfo>) => {
       observer.next(fixedData);
