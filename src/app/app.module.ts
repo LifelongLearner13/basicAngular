@@ -4,15 +4,15 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { BasicService} from './bike/basic.service';
-import { StaticBikeListComponent } from './bike/static-bike-list.component';
 import { HomeComponent } from './home/home.component';
+
+// Feature Module
+import { BikeModule } from './bike/bike.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StaticBikeListComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,8 +22,8 @@ import { HomeComponent } from './home/home.component';
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: '**', redirectTo: 'home', pathMatch: 'full' }
     ]),
+    BikeModule,
   ],
-  providers: [ BasicService ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
 })
 export class AppModule { }

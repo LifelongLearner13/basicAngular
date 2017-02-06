@@ -1,0 +1,39 @@
+<div class="table-responsive">
+  <table class="table table-sm" *ngIf="bikes && bikes.stationBeanList && bikes.stationBeanList.length">
+    <caption>Citi Bike Station Data from {{ bikes.executionTime }}</caption>
+    <thead class="thead-inverse">
+      <tr>
+        <th>ID</th>
+        <th>Station Name</th>
+        <th>Available Bikes</th>
+        <th>Available Docks</th>
+        <th>Total Docks</th>
+        <th>Status</th>
+        <th>Address</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Last Communication</th>
+        <th>Test Station</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bike of bikes.stationBeanList">
+        <td>{{ bike.id }}</td>
+        <td>{{ bike.stationName }}</td>
+        <td>{{ bike.availableBikes }}</td>
+        <td>{{ bike.availableDocks }}</td>
+        <td>{{ bike.totalDocks }}</td>
+        <td>{{ bike.statusValue }}</td>
+        <td>
+          <p>{{bike.stAddress1}}</p>
+          <p *ngIf="bike.stAddress2">{{bike.stAddress2}}</p>
+          <p *ngIf="bike.city">{{bike.city}} {{bike.postalCode}}</p>
+        </td>
+        <td>{{ bike.latitude }}</td>
+        <td>{{ bike.longitude }}</td>
+        <td>{{ bike.lastCommunicationTime }}</td>
+        <td>{{ bike.testStation }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
