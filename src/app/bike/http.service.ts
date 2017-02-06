@@ -18,10 +18,10 @@ export class HttpService {
   getData(): Observable<BikeInfo> {
     return this._http.get(this._apiUrl)
       .map((response: Response) => <BikeInfo[]>response.json())
-      .do(data => console.log('All: ' + JSON.stringify(data)))
       .catch(this.handleError);
   }
 
+  // This is only for demonstration, in production errors would be handled better
   private handleError(error: Response) {
     console.error(error);
     return Observable.throw(error.json().error || 'Server error');
