@@ -1,48 +1,38 @@
 <div class="table-responsive">
-  <table class="table" *ngIf="bikes.stationBeanList && bikes.stationBeanList.length">
+  <table class="table table-sm" *ngIf="bikes.stationBeanList && bikes.stationBeanList.length">
     <caption>Citi Bike Station Data from {{ bikes.executionTime }}</caption>
     <thead class="thead-inverse">
       <tr>
         <th>ID</th>
         <th>Station Name</th>
+        <th>Available Bikes</th>
         <th>Available Docks</th>
         <th>Total Docks</th>
+        <th>Status</th>
+        <th>Address</th>
         <th>Latitude</th>
         <th>Longitude</th>
-        <th>Status Value</th>
-        <th>Status Key</th>
-        <th>Available Bikes</th>
-        <th>Street Address 1</th>
-        <th>Street Address 2</th>
-        <th>City</th>
-        <th>Postal Code</th>
-        <th>Location</th>
-        <th>Altitude</th>
+        <th>Last Communication</th>
         <th>Test Station</th>
-        <th>Last Communication Time</th>
-        <th>Land Mark</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let bike of bikes.stationBeanList">
         <td>{{ bike.id }}</td>
         <td>{{ bike.stationName }}</td>
+        <td>{{ bike.availableBikes }}</td>
         <td>{{ bike.availableDocks }}</td>
         <td>{{ bike.totalDocks }}</td>
+        <td>{{ bike.statusValue }}</td>
+        <td>
+          <p>{{bike.stAddress1}}</p>
+          <p *ngIf="bike.stAddress2">{{bike.stAddress2}}</p>
+          <p *ngIf="bike.city">{{bike.city}} {{bike.postalCode}}</p>
+        </td>
         <td>{{ bike.latitude }}</td>
         <td>{{ bike.longitude }}</td>
-        <td>{{ bike.statusValue }}</td>
-        <td>{{ bike.statusKey }}</td>
-        <td>{{ bike.availableBikes }}</td>
-        <td>{{ bike.stAddress1 }}</td>
-        <td>{{ bike.stAddress2 }}</td>
-        <td>{{ bike.city }}</td>
-        <td>{{ bike.postalCode }}</td>
-        <td>{{ bike.location }}</td>
-        <td>{{ bike.altitude }}</td>
-        <td>{{ bike.testStation }}</td>
         <td>{{ bike.lastCommunicationTime }}</td>
-        <td>{{ bike.landMark }}</td>
+        <td>{{ bike.testStation }}</td>
       </tr>
     </tbody>
   </table>

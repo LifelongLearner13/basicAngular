@@ -9,8 +9,7 @@ import { BasicService } from './basic.service';
   styleUrls: ['./static-bike-list.component.css']
 })
 export class StaticBikeListComponent implements OnInit {
-  pageTitle: string = 'Bike List';
-
+  pageTitleStart: string = 'Citi Bike Station Data from ';
   bikes: BikeInfo;
 
   constructor(private _basicService: BasicService) { }
@@ -18,7 +17,5 @@ export class StaticBikeListComponent implements OnInit {
   ngOnInit(): void {
     this._basicService.getData()
       .subscribe(bikes => this.bikes = bikes);
-    console.log('Bikes: ', JSON.stringify(this.bikes))
   }
-
 }
