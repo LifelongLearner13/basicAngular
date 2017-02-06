@@ -1,14 +1,14 @@
 <h1 class="page-title">{{ title }}</h1>
-<nav>
-    <ul class="nav justify-content-center">
+<nav class="row justify-content-md-center">
+    <ul class="nav justify-content-center nav-pills col col-lg-7">
       <li class="nav-item">
-        <a class="nav-link active">Home</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="/home">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link">Static Data</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="/static-bike">Static Data</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link">Live Data</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="/live-bike">Live Data</a>
       </li>
     </ul>
 </nav>
